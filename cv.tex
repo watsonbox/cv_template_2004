@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{cv}
+
+\title{Curriculum Vitae}
+\author{Howard Wilson}
+
+\begin{document}
+
+
+% CV Header section
+{\huge{\color{slateblue}\textbf{John Smith}}}\\
+\rule{\textwidth}{0.5mm}\\
+
+
+% Personal Details section
+\parbox{0.5\textwidth}{
+\begin{tabbing}
+\hspace{3cm} \= \hspace{4cm} \= \kill
+{\bf Address} \> 123 Broadway,\\
+\> City, 12345 \\
+{\bf Date of Birth} \> 7$^{th}$ September 1979 \\
+{\bf Nationality} \> British
+\end{tabbing}
+}\hfil\parbox{0.5\textwidth}{
+\begin{tabbing}
+\hspace{3cm} \= \hspace{4cm} \= \kill
+{\bf Home Phone} \> +0 (000) 111 1111 \\
+{\bf Mobile Phone} \> +0 (000) 111 1112 \\
+{\bf Email} \> \href{mailto:john@smith.com}{john@smith.com} \\
+\end{tabbing}
+}
+
+
+% Personal profile section
+\section*{Personal Profile}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer blandit, massa at tincidunt ornare, dolor magna interdum felis, ac blandit urna neque in turpis.
+
+
+% Education section
+\section*{Education}
+
+\begin{tabbing}
+\hspace{2cm} \= \hspace{4cm} \= \kill
+\bf{2009-2012} \> BSc Hons in Computer Science - \href{http://www.warwick.ac.uk}{University of Warwick, England} \\
+\>First Class - 80\% Average\\
+\rule{0mm}{5mm}\>\+
+\textit{Third Year Project - 89\% awarded `Project of the Year 2004'}
+\end{tabbing}
+
+\begin{tabbing}
+\hspace{2cm} \= \hspace{4cm} \= \kill
+\rule{0mm}{5mm}\bf{2007-2009} \> Advanced Secondary Education - \href{http://www.corfe-hills.dorset.sch.uk}{Corfe Hills School, Broadstone, Dorset, England}\\
+\rule{0mm}{5mm}\>\+
+\textit{Pure Mathematics} \> A \\
+\textit{Statistics (AS)} \> A \\
+\textit{Physics} \> A \\
+\textit{Economics} \> B
+\end{tabbing}
+
+
+% Employment History section
+\section*{Employment History}
+
+\begin{job}
+{Sep 2013 -}{Present}
+{Twitter, 1355 Market St, San Francisco, CA, United States}
+{http://www.twitter.com}
+{Senior Developer / Technical Team Lead}%
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus.\\
+\rule{0mm}{5mm}\textbf{Technologies:} Ruby on Rails 2.3, Amazon EC2, NoSQL data stores, memcached, collaborative matching, Facebook Graph API.}
+\end{job}
+
+\begin{job}
+{Oct 2012 -}{Sep 2014}
+{Facebook, Menlo Park, CA 94025, United States}
+{http://www.facebook.com}
+{Consultant Analyst Programmer}%
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor:
+
+\begin{itemize-noindent}
+\item{Designing and developing an enterprise ASP.NET application for generic reporting, with a transactional COM+ serviced component middle-tier, and secure data access layer.}
+\item{Working with the finance department to produce useful reports from complex data models.}
+\end{itemize-noindent}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis.
+\end{job}
+
+
+% IT/Computing Skills section
+\section*{Software Engineering Skills}
+
+\begin{skillgroup}{Programming Languages}%
+	\skill{Ruby} - MRI 1.8.7, 1.9.2\\
+	\skill{ASP.NET, C\#, VB.NET}\\
+	\skill{PHP}\\
+	\skill{Java/Scala}
+\end{skillgroup}
+
+\begin{skillgroup}{Web Development}%
+  \skill{HTML5, CSS3/SASS, JavaScript/CoffeeScript/jQuery}\\
+	\skill{Ruby on Rails v3.1}\\
+	\skill{Test:Unit, RSpec, Cucumber, Selenium} - automated testing frameworks\\
+	\skill{Apache/Nginx Web Servers}\\
+\end{skillgroup}
+
+\begin{skillgroup}{Miscellaneous}%
+	\skill{Microsoft SQL Server 2000/2005} - database architecture and administration\\
+	\skill{Transact-SQL} - data definition and manipulation\\
+	\skill{SQL Profiler} - performance tuning and debugging\\
+	\skill{MySQL Server}
+	\skill{CVS, DARCS, git} - source version control
+\end{skillgroup}
+
+
+% Interests section
+\section*{Interests}
+
+\begin{tabbing}
+\hspace{5mm} \= \kill
+\sqbullet \> \textbf{Badminton, Tennis, Running, Cycling, Sailing} \\
+\rule{0mm}{4mm}\sqbullet \> \textbf{Travelling}\\
+\rule{0mm}{4mm}\sqbullet \> \textbf{Creative Writing} \\
+\rule{0mm}{4mm}\sqbullet \> \textbf{Photography} \\
+\rule{0mm}{4mm}\sqbullet \> \textbf{Car Mechanics} \\
+
+\end{tabbing}
+
+
+% References section
+\section*{Referees}
+
+Available on request.
+
+\end{document}

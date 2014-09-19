@@ -1,0 +1,80 @@
+% Howard Wilson - 2004
+
+% Included packages
+\usepackage[a4paper,hmargin=25mm,vmargin=30mm]{geometry}
+\usepackage{fancyhdr,lastpage}
+\usepackage{color}
+\usepackage{pifont}
+\usepackage{hyperref}
+
+% Colour definitions
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+\definecolor{slateblue}{rgb}{0.17,0.22,0.34}%{#2B3856}
+
+% Coloured headings
+\let\LaTeX@startsection\@startsection
+\renewcommand{\@startsection}[6]{\LaTeX@startsection{#1}{#2}{#3}{#4}{#5}{\color{slateblue}\raggedright #6}}
+
+% Page margins adjustments
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+
+% Custom footer definition
+\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage\ of
+    \pageref{LastPage}}}
+\pagestyle{plain}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Non-indenting paragraphs
+\setlength\parindent{0pt}
+
+% Non-indenting itemize
+\newenvironment{itemize-noindent}
+{\setlength{\leftmargini}{0em}\begin{itemize}}
+{\end{itemize}}
+
+% Text width for tabbing environments
+\newlength{\smalltextwidth}
+\newlength{\smallertextwidth}
+\setlength{\smalltextwidth}{\textwidth}
+\addtolength{\smalltextwidth}{-0.5cm}
+\setlength{\smallertextwidth}{\textwidth}
+\addtolength{\smallertextwidth}{-2cm}
+
+% Employment history job environment
+% from / to / firm+address / position
+\newenvironment{job}[5]
+{
+	\begin{tabbing}%
+	\hspace{2cm} \= \kill%
+	\textbf{#1} \> \href{#4}{#3} \\%
+	\textbf{#2} \>\+ \textit{#5} \\%
+	\begin{minipage}{\smallertextwidth}%
+	\rule{0mm}{5mm}%
+}
+{
+	\\\vspace{-1mm}
+	\end{minipage}
+	\end{tabbing}
+}
+
+% Skill group
+\newenvironment{skillgroup}[1]
+{
+	\begin{tabbing}%
+	\hspace{5mm} \= \kill%
+	\sqbullet \>\+ \textbf{#1} \\%
+	\rule{0mm}{4mm}%
+}
+{
+	\end{tabbing}
+}
+
+% Skill
+\newcommand{\skill}[1]{\textit{#1}}
+\newcommand{\skilltext}[1]{#1}
+
+% Other definitions
+\def\sqbullet{~\vrule height 1ex width .8ex depth -.2ex }
