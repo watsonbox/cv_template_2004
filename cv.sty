@@ -1,11 +1,16 @@
 % Howard Wilson - 2004
+\ProvidesPackage{cv}[2015/10/26 v0.1 Howard Wilson]
 
 % Included packages
 \usepackage[a4paper,hmargin=25mm,vmargin=30mm]{geometry}
 \usepackage{fancyhdr,lastpage}
+\usepackage{calc}
+\usepackage{enumitem}
 \usepackage{color}
 \usepackage{pifont}
-\usepackage{hyperref}
+\usepackage{array}
+\usepackage[super]{nth}
+\setcounter{secnumdepth}{0}
 
 % Colour definitions
 \definecolor{grey}{rgb}{0.5,0.5,0.5}
@@ -19,6 +24,7 @@
 \setlength{\topmargin}{0mm}
 \setlength{\headheight}{0mm}
 \setlength{\headsep}{0mm}
+\setlength{\tabcolsep}{0mm}
 
 % Custom footer definition
 \fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage\ of
@@ -30,51 +36,30 @@
 % Non-indenting paragraphs
 \setlength\parindent{0pt}
 
-% Non-indenting itemize
-\newenvironment{itemize-noindent}
-{\setlength{\leftmargini}{0em}\begin{itemize}}
-{\end{itemize}}
-
-% Text width for tabbing environments
-\newlength{\smalltextwidth}
-\newlength{\smallertextwidth}
-\setlength{\smalltextwidth}{\textwidth}
-\addtolength{\smalltextwidth}{-0.5cm}
-\setlength{\smallertextwidth}{\textwidth}
-\addtolength{\smallertextwidth}{-2cm}
 
 % Employment history job environment
 % from / to / firm+address / position
-\newenvironment{job}[5]
-{
-	\begin{tabbing}%
-	\hspace{2cm} \= \kill%
-	\textbf{#1} \> \href{#4}{#3} \\%
-	\textbf{#2} \>\+ \textit{#5} \\%
-	\begin{minipage}{\smallertextwidth}%
-	\rule{0mm}{5mm}%
-}
-{
-	\\\vspace{-1mm}
-	\end{minipage}
-	\end{tabbing}
+\newenvironment{job}[4]{%
+\par\addvspace{1\bigskipamount}
+\noindent\begin{tabular}{>{\bfseries\raggedright}p{2.5cm}p{\linewidth-2.5cm\relax}}
+	#1&{\href{#3}{#2}\par}
+	{\itshape#4\par}
+}{%
+	\end{tabular}
 }
 
+% Non-indenting itemize
+\setlist[itemize]{leftmargin=1em,label=\sqbullet,noitemsep}
 % Skill group
-\newenvironment{skillgroup}[1]
-{
-	\begin{tabbing}%
-	\hspace{5mm} \= \kill%
-	\sqbullet \>\+ \textbf{#1} \\%
-	\rule{0mm}{4mm}%
+\newcommand{\skill}[1]{\item [#1]}
+\newenvironment{skillgroup}[1]{%
+	\begin{itemize}%
+		\item \textbf{#1} 
+			\begin{description}[font=\normalfont\itshape,noitemsep]
+}{\end{description}
+	\end{itemize}
 }
-{
-	\end{tabbing}
-}
-
-% Skill
-\newcommand{\skill}[1]{\textit{#1}}
-\newcommand{\skilltext}[1]{#1}
 
 % Other definitions
 \def\sqbullet{~\vrule height 1ex width .8ex depth -.2ex }
+\usepackage{hyperref}
